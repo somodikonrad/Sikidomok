@@ -18,9 +18,27 @@ def nevjegy():
 def kilepes():
     pass
 
-def haromszog():
-    pass
 
+
+
+
+#fajl
+menu1=Menubutton(menusor, text='Fájl')
+menu1.pack(side=LEFT)
+FAJL = Menu(menu1)
+FAJL.add_command(label="Névjegy", command=nevjegy)
+FAJL.add_command(label="Kilépés", command=kilepes)
+menu1.config(menu=FAJL)
+
+
+#Terület
+
+def haromszog():
+    haromszog = Toplevel(foablak)
+    haromszog.title("Háromszög-Terület")
+    haromszog.geometry("450x450")
+    haromszog.resizable(False,False)
+    haromszog.mainloop()
 def kor():
     pass
 def deltoid():
@@ -35,8 +53,27 @@ def paralelogramma():
     pass
 def teglalap():
     pass
+
+menu2 = Menubutton(menusor, text="Terület")
+menu2.pack(side=LEFT)
+Terulet = Menu(menu2)
+Terulet.add_command(label="Háromszög", command=haromszog)
+Terulet.add_command(label="Kör", command=kor)
+Terulet.add_command(label="Deltoid", command=deltoid)
+Terulet.add_command(label="Négyzet", command=negyzet)
+Terulet.add_command(label="Trapéz", command=trapez)
+Terulet.add_command(label="Rombusz", command=rombusz)
+Terulet.add_command(label="Paralelogramma", command=paralelogramma)
+Terulet.add_command(label="Téglalap", command=teglalap)
+menu2.config(menu=Terulet)
+#Kerület
+
 def kharomszog():
-    pass
+    kharomszog = Toplevel(foablak)
+    kharomszog.title("Háromszög-Kerület")
+    kharomszog.geometry("450x450")
+    kharomszog.resizable(False,False)
+    kharomszog.mainloop()
 def kkor():
     pass
 def kdeltoid():
@@ -51,29 +88,7 @@ def kparalelogramma():
     pass
 def kteglalap():
     pass
-#fajl
-menu1=Menubutton(menusor, text='Fájl')
-menu1.pack(side=LEFT)
-FAJL = Menu(menu1)
-FAJL.add_command(label="Névjegy", command=nevjegy)
-FAJL.add_command(label="Kilépés", command=kilepes)
-menu1.config(menu=FAJL)
 
-
-#Terület
-menu2 = Menubutton(menusor, text="Terület")
-menu2.pack(side=LEFT)
-Terulet = Menu(menu2)
-Terulet.add_command(label="Háromszög", command=haromszog)
-Terulet.add_command(label="Kör", command=kor)
-Terulet.add_command(label="Deltoid", command=deltoid)
-Terulet.add_command(label="Négyzet", command=negyzet)
-Terulet.add_command(label="Trapéz", command=trapez)
-Terulet.add_command(label="Rombusz", command=rombusz)
-Terulet.add_command(label="Paralelogramma", command=paralelogramma)
-Terulet.add_command(label="Téglalap", command=teglalap)
-menu2.config(menu=Terulet)
-#Kerület
 menu3 = Menubutton(menusor, text="Kerület")
 menu3.pack(side=LEFT)
 Kerulet = Menu(menu3)
