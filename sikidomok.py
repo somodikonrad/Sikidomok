@@ -34,10 +34,34 @@ menu1.config(menu=FAJL)
 #Terület
 
 def haromszog():
+    def szamitas():
+        pass
     haromszog = Toplevel(foablak)
     haromszog.title("Háromszög-Terület")
     haromszog.geometry("450x450")
     haromszog.resizable(False,False)
+    img_haromszog = PhotoImage(file="iconkombó.png")
+    haromszog.iconphoto(True, img_haromszog)
+
+    szoveg1 = Label (haromszog, text='a:')
+    szoveg2 = Label (haromszog, text='m:')
+    szoveg1.grid(row = 1, column = 2)
+    szoveg2.grid(row = 2, column = 2)
+
+    mezo1 = Entry(haromszog)
+    mezo2 = Entry(haromszog)
+    mezo1.grid(row = 1, column = 3)
+    mezo2.grid(row = 2, column = 3)
+    gomb1 = Button(haromszog, text = 'Számítás', command = szamitas)
+    gomb1.grid(row = 3, column = 3)
+    szoveg_eredmeny = Label(haromszog, text = 'Eredmény: ')
+    szoveg_eredmeny.grid(row = 4, column = 2)
+    eredmeny_mezo = Entry(haromszog)
+    eredmeny_mezo.grid(row = 4, column  = 3)
+
+
+
+
     haromszog.mainloop()
 def kor():
     pass
@@ -73,6 +97,30 @@ def kharomszog():
     kharomszog.title("Háromszög-Kerület")
     kharomszog.geometry("450x450")
     kharomszog.resizable(False,False)
+    img_haromszog = PhotoImage(file="iconkombó.png")
+    kharomszog.iconphoto(True, img_haromszog)
+
+    szoveg1 = Label (kharomszog, text='a:')
+    szoveg2 = Label (kharomszog, text='b:')
+    szoveg3 = Label (kharomszog, text='c:')
+    szoveg1.grid(row = 1, column = 2)
+    szoveg2.grid(row = 2, column = 2)
+    szoveg3.grid(row = 3, column = 2)
+    mezo0 = Entry(kharomszog)
+    mezo1 = Entry(kharomszog)
+    mezo2 = Entry(kharomszog)
+    mezo1.grid(row = 1, column = 3)
+    mezo2.grid(row = 2, column = 3)
+    mezo0.grid(row = 3, column = 3)
+    gomb1 = Button(kharomszog, text = 'Számítás', command = szamitas)
+    gomb1.grid(row = 3, column = 3)
+    szoveg_eredmeny = Label(kharomszog, text = 'Eredmény: ')
+    szoveg_eredmeny.grid(row = 4, column = 2)
+    eredmeny_mezo = Entry(kharomszog)
+    eredmeny_mezo.grid(row = 4, column  = 3)
+
+
+
     kharomszog.mainloop()
 def kkor():
     pass
