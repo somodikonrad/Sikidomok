@@ -93,6 +93,8 @@ menu2.config(menu=Terulet)
 #Kerület
 
 def kharomszog():
+    def szamitas():
+        pass
     kharomszog = Toplevel(foablak)
     kharomszog.title("Háromszög-Kerület")
     kharomszog.geometry("450x450")
@@ -113,11 +115,11 @@ def kharomszog():
     mezo2.grid(row = 2, column = 3)
     mezo0.grid(row = 3, column = 3)
     gomb1 = Button(kharomszog, text = 'Számítás', command = szamitas)
-    gomb1.grid(row = 3, column = 3)
+    gomb1.grid(row = 4, column = 3)
     szoveg_eredmeny = Label(kharomszog, text = 'Eredmény: ')
     szoveg_eredmeny.grid(row = 4, column = 2)
     eredmeny_mezo = Entry(kharomszog)
-    eredmeny_mezo.grid(row = 4, column  = 3)
+    eredmeny_mezo.grid(row = 5, column  = 3)
 
 
 
