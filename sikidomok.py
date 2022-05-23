@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter.messagebox import showerror
 
 foablak = Tk()
 foablak.geometry('900x500')
@@ -13,14 +14,16 @@ menusor = Frame(foablak)
 menusor.pack(side=TOP, fill=X)
 
 def nevjegy():
-    pass
+    nevjegy_ablak = Toplevel(foablak)
+    szoveg = Label(nevjegy_ablak, text="Készítették:").pack()
+    sk = Label(nevjegy_ablak, text="Somodi Konrád").pack()
+    vvj = Label(nevjegy_ablak, text="Varga Viktor József").pack()
+    svm = Label(nevjegy_ablak, text="Simon Valentin Márk").pack()
+    kilepes_gomb = Button(nevjegy_ablak, text="Kilépés", command=nevjegy_ablak.destroy).pack()
+    nevjegy_ablak.mainloop()
 
 def kilepes():
-    pass
-
-
-
-
+    foablak.destroy()
 
 #fajl
 menu1=Menubutton(menusor, text='Fájl')
@@ -32,13 +35,32 @@ menu1.config(menu=FAJL)
 
 
 #Terület
-
 def haromszog():
     def szamitas():
-        pass
+        try:
+            a = int(mezo1.get())
+            m = int(mezo2.get())
+            if a == 0:
+                showerror("Hiba", "Nem lehet egyik oldal sem nulla!")
+            elif m == 0:
+                showerror("Hiba", "Nem lehet egyik oldal sem nulla!")
+            else:
+                terulet = a*m/2
+                eredmeny_mezo.configure(state=NORMAL)
+                eredmeny_mezo.delete(0, END)
+                eredmeny_mezo.insert(0, terulet)
+                eredmeny_mezo.configure(state=DISABLED)
+        except:
+            showerror("Hiba", "Csak számokat adj meg/Minden mezőbe írj számot!")
+            mezo1.delete(0, END)
+            mezo2.delete(0, END)
+            eredmeny_mezo.configure(state=NORMAL)
+            eredmeny_mezo.delete(0, END)
+            eredmeny_mezo.configure(state=DISABLED)
+
     haromszog = Toplevel(foablak)
     haromszog.title("Háromszög-Terület")
-    haromszog.geometry("450x450")
+    haromszog.geometry("200x300")
     haromszog.resizable(False,False)
     img_haromszog = PhotoImage(file="iconkombó.png")
     haromszog.iconphoto(True, img_haromszog)
@@ -56,13 +78,12 @@ def haromszog():
     gomb1.grid(row = 3, column = 3)
     szoveg_eredmeny = Label(haromszog, text = 'Eredmény: ')
     szoveg_eredmeny.grid(row = 4, column = 2)
-    eredmeny_mezo = Entry(haromszog)
+    eredmeny_mezo = Entry(haromszog, state=DISABLED)
     eredmeny_mezo.grid(row = 4, column  = 3)
-
-
-
-
+    kilepes_gomb = Button(haromszog, text="Kilépés", command=haromszog.destroy)
+    kilepes_gomb.grid(row=5, column=3)
     haromszog.mainloop()
+
 def kor():
     pass
 def deltoid():
@@ -94,10 +115,33 @@ menu2.config(menu=Terulet)
 
 def kharomszog():
     def szamitas():
-        pass
+        try:
+            a = int(mezo0.get())
+            b = int(mezo1.get())
+            c = int(mezo2.get())
+            if a == 0:
+                showerror("Hiba", "Nem lehet egyik oldal sem nulla!")
+            elif b == 0:
+                showerror("Hiba", "Nem lehet egyik oldal sem nulla!")
+            elif c == 0:
+                showerror("Hiba", "Nem lehet egyik oldal sem nulla!")
+            else:
+                kerulet = a+b+c
+                eredmeny_mezo.configure(state=NORMAL)
+                eredmeny_mezo.delete(0, END)
+                eredmeny_mezo.insert(0, kerulet)
+                eredmeny_mezo.configure(state=DISABLED)
+        except:
+            showerror("Hiba", "Csak számokat adj meg/Minden mezőbe írj számot!")
+            mezo0.delete(0, END)
+            mezo1.delete(0, END)
+            mezo2.delete(0, END)
+            eredmeny_mezo.configure(state=NORMAL)
+            eredmeny_mezo.delete(0, END)
+            eredmeny_mezo.configure(state=DISABLED)
     kharomszog = Toplevel(foablak)
     kharomszog.title("Háromszög-Kerület")
-    kharomszog.geometry("450x450")
+    kharomszog.geometry("200x300")
     kharomszog.resizable(False,False)
     img_haromszog = PhotoImage(file="iconkombó.png")
     kharomszog.iconphoto(True, img_haromszog)
@@ -118,24 +162,30 @@ def kharomszog():
     gomb1.grid(row = 4, column = 3)
     szoveg_eredmeny = Label(kharomszog, text = 'Eredmény: ')
     szoveg_eredmeny.grid(row = 4, column = 2)
-    eredmeny_mezo = Entry(kharomszog)
+    eredmeny_mezo = Entry(kharomszog, )
     eredmeny_mezo.grid(row = 5, column  = 3)
-
-
-
+    kilepes_gomb = Button(kharomszog, text="Kilépés", command=kharomszog.destroy)
+    kilepes_gomb.grid(row=6, column=3)
     kharomszog.mainloop()
+
 def kkor():
     pass
+
 def kdeltoid():
     pass
+
 def knegyzet():
     pass
+
 def ktrapez():
     pass
+
 def krombusz():
     pass
+
 def kparalelogramma():
     pass
+
 def kteglalap():
     pass
 
