@@ -25,7 +25,7 @@ def nevjegy():
 def kilepes():
     foablak.destroy()
 
-#fajl
+#FAJL
 menu1=Menubutton(menusor, text='Fájl')
 menu1.pack(side=LEFT)
 FAJL = Menu(menu1)
@@ -34,7 +34,7 @@ FAJL.add_command(label="Kilépés", command=kilepes)
 menu1.config(menu=FAJL)
 
 
-#Terület
+#TERÜLET
 def haromszog():
     def szamitas():
         try:
@@ -60,10 +60,13 @@ def haromszog():
 
     haromszog = Toplevel(foablak)
     haromszog.title("Háromszög-Terület")
-    haromszog.geometry("200x300")
+    haromszog.geometry("200x220")
     haromszog.resizable(False,False)
     img_haromszog = PhotoImage(file="iconkombó.png")
     haromszog.iconphoto(True, img_haromszog)
+    c = Canvas(haromszog, width= 100, height=100)
+    c.create_polygon((0, 100, 50, 0, 100, 100), fill="red")
+    c.grid(row=7, column=3)
 
     szoveg1 = Label (haromszog, text='a:')
     szoveg2 = Label (haromszog, text='m:')
@@ -111,7 +114,7 @@ Terulet.add_command(label="Rombusz", command=rombusz)
 Terulet.add_command(label="Paralelogramma", command=paralelogramma)
 Terulet.add_command(label="Téglalap", command=teglalap)
 menu2.config(menu=Terulet)
-#Kerület
+#KERÜLET
 
 def kharomszog():
     def szamitas():
@@ -141,10 +144,13 @@ def kharomszog():
             eredmeny_mezo.configure(state=DISABLED)
     kharomszog = Toplevel(foablak)
     kharomszog.title("Háromszög-Kerület")
-    kharomszog.geometry("200x300")
+    kharomszog.geometry("200x250")
     kharomszog.resizable(False,False)
     img_haromszog = PhotoImage(file="iconkombó.png")
     kharomszog.iconphoto(True, img_haromszog)
+    c = Canvas(kharomszog, width= 100, height=100)
+    c.create_polygon((0, 100, 50, 0, 100, 100), fill="red")
+    c.grid(row=7, column=3)
 
     szoveg1 = Label (kharomszog, text='a:')
     szoveg2 = Label (kharomszog, text='b:')
