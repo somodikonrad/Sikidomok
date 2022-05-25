@@ -88,7 +88,42 @@ def haromszog():
     haromszog.mainloop()
 
 def kor():
-    pass
+    def szamitas():
+        pass
+    kor = Toplevel(foablak)
+    kor.title("Kör-Terület")
+    kor.geometry("200x220")
+    kor.resizable(False,False)
+
+    szoveg1 = Label (kor, text='r:')
+    szoveg1.grid(row = 1, column = 2)
+    mezo1 = Entry(kor)
+    mezo1.grid(row = 1, column = 3)
+
+    gomb1 = Button(kor, text = 'Számítás', command = szamitas)
+    gomb1.grid(row = 3, column = 3)
+    szoveg_eredmeny = Label(kor, text = 'Eredmény: ')
+    szoveg_eredmeny.grid(row = 4, column = 2)
+    eredmeny_mezo = Entry(kor, state=DISABLED)
+    eredmeny_mezo.grid(row = 4, column  = 3)
+    kilepes_gomb = Button(kor, text="Kilépés", command=kor.destroy)
+    kilepes_gomb.grid(row=5, column=3)
+
+    kor.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def deltoid():
     pass
 def negyzet():
@@ -175,7 +210,26 @@ def kharomszog():
     kharomszog.mainloop()
 
 def kkor():
-    pass
+    def szamitas():
+        pass
+    kkor = Toplevel(foablak)
+    kkor.title("Kör-Terület")
+    kkor.geometry("200x220")
+    kkor.resizable(False,False)
+
+    szoveg1 = Label (kkor, text='r:')
+    szoveg1.grid(row = 1, column = 2)
+    mezo1 = Entry(kkor)
+    mezo1.grid(row = 1, column = 3)
+
+    gomb1 = Button(kkor, text = 'Számítás', command = szamitas)
+    gomb1.grid(row = 3, column = 3)
+    szoveg_eredmeny = Label(kkor, text = 'Eredmény: ')
+    szoveg_eredmeny.grid(row = 4, column = 2)
+    eredmeny_mezo = Entry(kkor, state=DISABLED)
+    eredmeny_mezo.grid(row = 4, column  = 3)
+    kilepes_gomb = Button(kkor, text="Kilépés", command=kkor.destroy)
+    kilepes_gomb.grid(row=5, column=3)
 
 def kdeltoid():
     pass
