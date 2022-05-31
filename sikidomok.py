@@ -124,6 +124,9 @@ def kor():
     eredmeny_mezo.grid(row = 4, column  = 3)
     kilepes_gomb = Button(kor, text="Kilépés", command=kor.destroy)
     kilepes_gomb.grid(row=5, column=3)
+    haromszog= Canvas(kor,width=250, height=250)
+    haromszog.grid()
+    haromszog.create_oval(60,60,210,210)
 
     kor.mainloop()
 
@@ -263,6 +266,10 @@ def kkor():
     eredmeny_mezo.grid(row = 4, column  = 3)
     kilepes_gomb = Button(kkor, text="Kilépés", command=kkor.destroy)
     kilepes_gomb.grid(row=5, column=3)
+    haromszog= Canvas(kkor,width=250, height=250)
+    haromszog.grid()
+    haromszog.create_oval(60,60,210,210)
+
 
 def kdeltoid():
     pass
