@@ -89,7 +89,23 @@ def haromszog():
 
 def kor():
     def szamitas():
-        pass
+        try:
+            r = int(mezo1.get())
+            if r == 0 or r < 0:
+                showerror("Hiba", "Nem lehet nulla, vagy nullánál kisebb!")
+            else:
+                terulet = r*r*3.14
+                eredmeny_mezo.configure(state=NORMAL)
+                eredmeny_mezo.delete(0, END)
+                eredmeny_mezo.insert(0, terulet)
+                eredmeny_mezo.configure(state=DISABLED)
+        except:
+            showerror("Hiba", "Csak számokat adj meg/Minden mezőbe írj számot!")
+            mezo1.delete(0, END)
+            eredmeny_mezo.configure(state=NORMAL)
+            eredmeny_mezo.delete(0, END)
+            eredmeny_mezo.configure(state=DISABLED)
+
     kor = Toplevel(foablak)
     kor.title("Kör-Terület")
     kor.geometry("200x220")
@@ -211,9 +227,26 @@ def kharomszog():
 
 def kkor():
     def szamitas():
-        pass
+        try:
+            r = int(mezo1.get())
+            if r == 0 or r < 0:
+                showerror("Hiba", "Nem lehet nulla, vagy nullánál kisebb!")
+            else:
+                kerulet = 2*r*3.14
+                kerulet = round(kerulet, 2)
+                eredmeny_mezo.configure(state=NORMAL)
+                eredmeny_mezo.delete(0, END)
+                eredmeny_mezo.insert(0, kerulet)
+                eredmeny_mezo.configure(state=DISABLED)
+        except:
+            showerror("Hiba", "Csak számokat adj meg/Minden mezőbe írj számot!")
+            mezo1.delete(0, END)
+            eredmeny_mezo.configure(state=NORMAL)
+            eredmeny_mezo.delete(0, END)
+            eredmeny_mezo.configure(state=DISABLED)
+
     kkor = Toplevel(foablak)
-    kkor.title("Kör-Terület")
+    kkor.title("Kör-Kerület")
     kkor.geometry("200x220")
     kkor.resizable(False,False)
 
