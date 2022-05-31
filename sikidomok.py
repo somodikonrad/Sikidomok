@@ -87,6 +87,9 @@ def haromszog():
     kilepes_gomb.grid(row=5, column=3)
     haromszog.mainloop()
 
+
+#KÖR
+
 def kor():
     def szamitas():
         pass
@@ -108,15 +111,9 @@ def kor():
     eredmeny_mezo.grid(row = 4, column  = 3)
     kilepes_gomb = Button(kor, text="Kilépés", command=kor.destroy)
     kilepes_gomb.grid(row=5, column=3)
-    myCanvas = Canvas(kor)
-    myCanvas.grid()
-    def create_circle(x, y, r, canvasName): 
-        x0 = x - r
-        y0 = y - r
-        x1 = x + r
-        y1 = y + r
-    return canvasName.create_oval(x0, y0, x1, y1)
-    create_circle(75, 75, 75, myCanvas)
+    haromszog= Canvas(kor,width=250, height=250)
+    haromszog.grid()
+    haromszog.create_oval(60,60,210,210)
     kor.mainloop()
 
 
