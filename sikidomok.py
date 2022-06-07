@@ -124,8 +124,8 @@ def kor():
     eredmeny_mezo.grid(row = 4, column  = 3)
     kilepes_gomb = Button(kor, text="Kilépés", command=kor.destroy)
     kilepes_gomb.grid(row=5, column=3)
-    haromszog= Canvas(kor,width=100, height=100)
-    haromszog.grid(row=7, column=3)
+    haromszog= Canvas(kor, width=50, height=50)
+    haromszog.grid(row=7, column=2)
     haromszog.create_oval(60,60,210,210)
 
     kor.mainloop()
@@ -144,7 +144,53 @@ def kor():
 
 
 def deltoid():
-    pass
+    def szamitas():
+        try:
+            e = int(mezo1.get())
+            f = int(mezo2.get())
+            if e == 0 or e < 0 or f < 0 or f == 0:
+                showerror("Hiba", "Nem lehet nulla, vagy nullánál kisebb!")
+            else:
+                terulet = e*f/2
+                eredmeny_mezo.configure(state=NORMAL)
+                eredmeny_mezo.delete(0, END)
+                eredmeny_mezo.insert(0, terulet)
+                eredmeny_mezo.configure(state=DISABLED)
+        except:
+            showerror("Hiba", "Csak számokat adj meg/Minden mezőbe írj számot!")
+            mezo1.delete(0, END)
+            eredmeny_mezo.configure(state=NORMAL)
+            eredmeny_mezo.delete(0, END)
+            eredmeny_mezo.configure(state=DISABLED)
+
+    deltoid = Toplevel(foablak)
+    deltoid.title("Deltoid-Terület")
+    deltoid.geometry("200x220")
+    deltoid.resizable(False,False)
+
+    szoveg1 = Label (deltoid, text='e:')
+    szoveg1.grid(row = 1, column = 2)
+    mezo1 = Entry(deltoid)
+    mezo1.grid(row = 1, column = 3)
+
+    szoveg2 = Label (deltoid, text='f:')
+    szoveg2.grid(row = 2, column = 2)
+    mezo2 = Entry(deltoid)
+    mezo2.grid(row = 2, column = 3)
+
+    gomb1 = Button(deltoid, text = 'Számítás', command = szamitas)
+    gomb1.grid(row = 3, column = 3)
+    szoveg_eredmeny = Label(deltoid, text = 'Eredmény: ')
+    szoveg_eredmeny.grid(row = 4, column = 2)
+    eredmeny_mezo = Entry(deltoid, state=DISABLED)
+    eredmeny_mezo.grid(row = 4, column  = 3)
+    kilepes_gomb = Button(deltoid, text="Kilépés", command=deltoid.destroy)
+    kilepes_gomb.grid(row=5, column=3)
+    haromszog= Canvas(deltoid,width=100, height=100)
+    haromszog.grid(row=7, column=3)
+    haromszog.create_oval(60,60,210,210)
+
+    deltoid.mainloop()
 def negyzet():
     pass
 def trapez():
@@ -272,8 +318,50 @@ def kkor():
 
 
 def kdeltoid():
-    pass
+    def szamitas():
+        try:
+            a = int(mezo1.get())
+            b = int(mezo2.get())
+            if a == 0 or a < 0 or b < 0 or b == 0:
+                showerror("Hiba", "Nem lehet nulla, vagy nullánál kisebb!")
+            else:
+                kerulet = (a+b)*2
+                eredmeny_mezo.configure(state=NORMAL)
+                eredmeny_mezo.delete(0, END)
+                eredmeny_mezo.insert(0, kerulet)
+                eredmeny_mezo.configure(state=DISABLED)
+        except:
+            showerror("Hiba", "Csak számokat adj meg/Minden mezőbe írj számot!")
+            mezo1.delete(0, END)
+            eredmeny_mezo.configure(state=NORMAL)
+            eredmeny_mezo.delete(0, END)
+            eredmeny_mezo.configure(state=DISABLED)
 
+    kdeltoid = Toplevel(foablak)
+    kdeltoid.title("Deltoid-Kerület")
+    kdeltoid.geometry("200x220")
+    kdeltoid.resizable(False,False)
+
+    szoveg1 = Label (kdeltoid, text='a:')
+    szoveg1.grid(row = 1, column = 2)
+    mezo1 = Entry(kdeltoid)
+    mezo1.grid(row = 1, column = 3)
+
+    szoveg2 = Label (kdeltoid, text='b:')
+    szoveg2.grid(row = 2, column = 2)
+    mezo2 = Entry(kdeltoid)
+    mezo2.grid(row = 2, column = 3)
+
+    gomb1 = Button(kdeltoid, text = 'Számítás', command = szamitas)
+    gomb1.grid(row = 3, column = 3)
+    szoveg_eredmeny = Label(kdeltoid, text = 'Eredmény: ')
+    szoveg_eredmeny.grid(row = 4, column = 2)
+    eredmeny_mezo = Entry(kdeltoid, state=DISABLED)
+    eredmeny_mezo.grid(row = 4, column  = 3)
+    kilepes_gomb = Button(kdeltoid, text="Kilépés", command=kdeltoid.destroy)
+    kilepes_gomb.grid(row=5, column=3)
+
+    kdeltoid.mainloop()
 def knegyzet():
     pass
 
